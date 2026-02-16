@@ -220,7 +220,7 @@ for kolom in fitur_numerik:
 # Korelasi
 plt.figure(figsize=(6, 4))
 corr = df[fitur_numerik].corr()
-sns.heatmap(corr, annot=True, cmap="Blues", fmt=".2f")
+sns.heatmap(corr, annot=True, cmap="Reds", fmt=".2f")
 plt.title("Korelasi antar fitur")
 plt.tight_layout()
 plt.savefig(os.path.join(STATIC_DIR, "correlation_heatmap.png"))
