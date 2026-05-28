@@ -1,3 +1,4 @@
+
 # train_models.py
 
 import os
@@ -5,6 +6,8 @@ import json
 import pandas as pd
 import numpy as np
 import seaborn as sns
+import joblib
+import matplotlib.pyplot as plt
 
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler, LabelEncoder
@@ -22,8 +25,6 @@ from sklearn.metrics import (
     auc,
 )
 
-import joblib
-import matplotlib.pyplot as plt
 
 # Menentukan folder dasar proyek dan folder penyimpanan grafik/model
 BASE_DIR = os.path.dirname(__file__)
@@ -251,7 +252,7 @@ def plot_metrics_bar(rf_m, nb_m):
 
 plot_metrics_bar(rf_metrics, nb_metrics)
 
-# 12. Membuat kurva ROC dan PR untuk kedua model
+# 13. Membuat kurva ROC dan PR untuk kedua model
 plt.figure(figsize=(6, 4))
 plt.plot(fpr_rf, tpr_rf, label=f"Random Forest (AUC = {roc_auc_rf:.3f})")
 plt.plot(fpr_nb, tpr_nb, label=f"Naïve Bayes (AUC = {roc_auc_nb:.3f})")
@@ -275,7 +276,7 @@ plt.tight_layout()
 plt.savefig(os.path.join(STATIC_DIR, "pr_compare.png"))
 plt.close()
 
-# 13. Menghitung dan menyimpan Feature Importance dari Random Forest
+# 14. Menghitung dan menyimpan Feature Importance dari Random Forest
 fi = rf.feature_importances_
 fi_dict = dict(zip(FEATURE_NAMES, fi))
 
@@ -293,7 +294,7 @@ plt.tight_layout()
 plt.savefig(os.path.join(STATIC_DIR, "feature_importance.png"))
 plt.close()
 
-# 14. Opsional: Membuat grafik SHAP jika library shap tersedia
+# 15. Opsional: Membuat grafik SHAP jika library shap tersedia
 try:
     import shap
     sample_X = X_train_s[np.random.choice(X_train_s.shape[0], min(200, X_train_s.shape[0]), replace=False)]

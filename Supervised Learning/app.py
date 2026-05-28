@@ -57,6 +57,32 @@ def api_predict():
         model_choice = data.get("model", "rf")
     except Exception as e:
         return jsonify({"error": "Input tidak valid", "details": str(e)}), 400
+    
+    if bandwidth <= 0:
+
+        return jsonify({
+            "error": "Bandwidth harus lebih dari 0"
+        }), 400
+
+    if latency < 0:
+
+        return jsonify({
+            "error": "Latency tidak boleh negatif"
+        }), 400
+
+    if packet_loss < 0 or packet_loss > 100:
+
+        return jsonify({
+            "error": "Packet loss harus antara 0 sampai 100"
+        }), 400
+
+    if uptime < 0 or uptime > 100:
+
+        return jsonify({
+            "error": "Uptime harus antara 0 sampai 100"
+        }), 400
+    
+        
 
     # Buat DataFrame satu baris dengan kolom yang sama seperti saat training
     X_df = pd.DataFrame(
