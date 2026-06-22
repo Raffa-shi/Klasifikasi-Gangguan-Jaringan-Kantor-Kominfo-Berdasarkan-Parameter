@@ -1,127 +1,350 @@
-#  Supervised Learning - Sistem Prediksi Jaringan
-
-Di project ini gue make beberapa teknologi utama untuk membangun sistem **prediksi jaringan berbasis Machine Learning**. Pemilihan stack ini bukan asal pakai, tapi karena sesuai kebutuhan training model, analisis data, dan proses eksperimen.
-
 <p align="center">
-  <img src="https://raw.githubusercontent.com/github/explore/main/topics/flask/flask.png" width="90" />
+  <img src="img/banner.png" width="100%">
 </p>
 
-<h1 align="center">Machine Learning</h1>
+<h1 align="center">
+Prediksi Gangguan Infrastruktur Jaringan Menggunakan Algoritma Random Forest dan Naive Bayes
+</h1>
 
 <p align="center">
-  Web Flask untuk prediksi status jaringan <b>(normal / gangguan)</b> menggunakan model Machine Learning <b>Random Forest</b> dan <b>Naive Bayes</b>.
+Implementasi Metode CRISP-DM untuk Klasifikasi Gangguan Jaringan Berbasis Website
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Python-3.x-blue?logo=python&logoColor=white" />
-  <img src="https://img.shields.io/badge/Flask-Web%20App-black?logo=flask&logoColor=white" />
-  <img src="https://img.shields.io/badge/scikit--learn-ML-orange?logo=scikitlearn&logoColor=white" />
-  <img src="https://img.shields.io/badge/Pandas-Data%20Processing-purple?logo=pandas&logoColor=white" />
-  <img src="https://img.shields.io/badge/Numpy-Numerical%20Computing-blue?logo=numpy&logoColor=white" />
-  <img src="https://img.shields.io/badge/Matplotlib-Visualization-green" />
-  <img src="https://img.shields.io/badge/Seaborn-Visualization-0aa6c2" />
+<img src="https://img.shields.io/badge/Python-3.14-blue?logo=python&logoColor=white">
+<img src="https://img.shields.io/badge/Flask-Web%20Application-black?logo=flask&logoColor=white">
+<img src="https://img.shields.io/badge/Scikit--Learn-Machine%20Learning-orange?logo=scikitlearn&logoColor=white">
+<img src="https://img.shields.io/badge/Pandas-Data%20Analysis-purple?logo=pandas&logoColor=white">
+<img src="https://img.shields.io/badge/NumPy-Numerical%20Computing-blue?logo=numpy&logoColor=white">
+<img src="https://img.shields.io/badge/Jupyter-Notebook-orange?logo=jupyter&logoColor=white">
+<img src="https://img.shields.io/badge/Wireshark-Network%20Monitoring-blue?logo=wireshark&logoColor=white">
 </p>
 
 ---
 
-## 🚀 Fitur Utama
-- Input parameter jaringan:
-  - bandwidth
-  - latency
-  - packet loss
-  - uptime
-- Pilih algoritma:
-  - Random Forest
-  - Naive Bayes
-- Output:
-  - status prediksi: **normal / gangguan**
-  - probabilitas prediksi
-- Menampilkan ringkasan metrik evaluasi model pada dashboard
+# Deskripsi Proyek
+
+Penelitian ini bertujuan membangun sistem prediksi gangguan jaringan berbasis website menggunakan algoritma Machine Learning `Random Forest` dan `Gaussian Naive Bayes`.
+
+Sistem memanfaatkan parameter jaringan berupa:
+
+- Bandwidth
+- Latency
+- Packet Loss
+- Uptime
+
+untuk mengklasifikasikan kondisi jaringan menjadi:
+
+- Normal
+- Gangguan
+
+Penelitian ini menggunakan metodologi `CRISP-DM (Cross Industry Standard Process for Data Mining)` sebagai kerangka kerja pengembangan model Machine Learning.
 
 ---
 
-## 🔥 Tech Stack
-| Komponen | Teknologi |
-|---------|-----------|
-| Backend | Flask |
-| Machine Learning | scikit-learn |
-| Data Processing | Pandas, NumPy |
+# Studi Kasus
+
+Dinas Komunikasi dan Informatika Kota Tangerang Selatan
+
+---
+
+# Tujuan Penelitian
+
+- Mengidentifikasi kondisi jaringan berdasarkan parameter monitoring.
+- Membandingkan performa algoritma Random Forest dan Naive Bayes.
+- Mengimplementasikan model terbaik ke dalam sistem berbasis web menggunakan Flask.
+- Membantu proses monitoring dan pengambilan keputusan terkait gangguan jaringan.
+
+---
+
+# Dataset
+
+Dataset dibangun dari hasil monitoring jaringan menggunakan Wireshark yang kemudian melalui proses:
+
+- Data Cleaning
+- Feature Engineering
+- Severity Scoring
+- Clustering Analysis
+- Labeling
+- Model Training
+
+Parameter yang digunakan:
+
+| Fitur | Deskripsi |
+|---------|---------|
+| Bandwidth | Kecepatan transfer data |
+| Latency | Waktu tunda komunikasi |
+| Packet Loss | Persentase kehilangan paket |
+| Uptime | Tingkat ketersediaan jaringan |
+
+---
+
+# Metodologi CRISP-DM
+
+## 1. Business Understanding
+
+Identifikasi kebutuhan prediksi gangguan jaringan untuk mendukung proses monitoring jaringan Diskominfo Kota Tangerang Selatan.
+
+## 2. Data Understanding
+
+Eksplorasi dataset hasil monitoring jaringan menggunakan:
+
+- Statistical Summary
+- Correlation Analysis
+- Distribution Analysis
+- Outlier Analysis
+
+## 3. Data Preparation
+
+Tahapan yang dilakukan:
+
+- Missing Value Handling
+- Duplicate Removal
+- Feature Engineering
+- Scaling
+- Severity Score Calculation
+- K-Means Clustering
+- Data Labeling
+
+## 4. Modeling
+
+Model yang digunakan:
+
+### Random Forest
+
+$$
+\hat{y}
+=
+mode(h_1(x),h_2(x),...,h_n(x))
+$$
+
+### Gaussian Naive Bayes
+
+$$
+P(C|X)
+=
+\frac
+{P(X|C)P(C)}
+{P(X)}
+$$
+
+Hyperparameter tuning dilakukan menggunakan:
+
+- GridSearchCV
+- Cross Validation (CV=5)
+
+## 5. Evaluation
+
+Metrik evaluasi:
+
+- Accuracy
+- Precision
+- Recall
+- F1 Score
+- ROC-AUC
+- Precision Recall Curve
+- Confusion Matrix
+- Learning Curve
+
+## 6. Deployment
+
+Model terbaik diimplementasikan ke dalam website menggunakan Flask Framework.
+
+---
+
+# Pipeline Sistem
+
+```text
+Wireshark
+    
+Data Collection
+    
+Data Cleaning
+    
+Feature Engineering
+    
+Severity Score
+    
+K-Means Clustering
+
+Labeling
+
+Train Test Split
+Scaling
+
+Random Forest
+Naive Bayes
+
+Hyperparameter Tuning
+    
+Evaluation
+    
+Model Deployment (Flask)
+```
+
+---
+
+# Teknologi yang Digunakan
+
+| Kategori | Teknologi |
+|-----------|-----------|
+| Programming Language | Python |
+| Machine Learning | Scikit-Learn |
+| Data Analysis | Pandas |
+| Numerical Computing | NumPy |
+| Visualization | Matplotlib |
+| Visualization | Seaborn |
+| Notebook | Jupyter Notebook |
+| Deployment | Flask |
 | Model Serialization | Joblib |
-| Visualization | Matplotlib, Seaborn |
-| Frontend | HTML, CSS (Tailwind optional) |
+| Monitoring Data | Wireshark |
 
 ---
 
-### <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
-Python jadi bahasa utama karena paling fleksibel buat dunia data dan Machine Learning. Hampir semua library ML dan pengolahan data support Python, jadi lebih gampang untuk eksperimen dan scaling project.
+# Struktur Project
 
-### <img src="https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white"/>
-Gue pakai Jupyter Notebook supaya proses development lebih enak:
-- bisa jalanin kode bertahap
-- gampang analisis output
-- cocok buat dokumentasi eksperimen ML
-- visualisasi hasil prediksi lebih jelas
-
-Notebook juga membantu untuk tracking progress, apalagi project ini masih **beta** dan banyak trial-error.
-
-###  <img src="https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white"/>
-Scikit-learn dipakai sebagai core library untuk Machine Learning karena:
-- punya banyak algoritma yang stabil (baseline model)
-- preprocessing lengkap
-- evaluasi model (accuracy, precision, recall, dll) gampang dipakai
-- cocok buat bikin model prediksi dengan workflow yang rapi
-
-### <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white"/>
-Pandas dipakai untuk:
-- baca dataset (CSV/Excel)
-- bersihin data (missing value, duplikat)
-- transform data jadi siap training
-- analisis sebelum masuk ke model
-
-Karena project ini banyak bermain di data, jadi gua gunain pandas dan itu wajib banget.
-
-### <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white"/>
-NumPy dipakai sebagai pondasi komputasi numerik:
-- operasi array/matrix cepat
-- dukungan input untuk training model
-- bantu hitungan matematis/statistik saat preprocessing atau evaluasi
+```text
+project/
+│
+├── data/
+│   └── labeled_data.csv
+│
+├── img/
+│   └── banner.png
+│
+├── models/
+│   ├── rf_model.pkl
+│   ├── nb_model.pkl
+│   ├── scaler.pkl
+│   └── label_encoder.pkl
+│
+├── static/
+├── templates/
+│
+├── app.py
+├── train_models.py
+├── metrics_summary.json
+├── requirements.txt
+└── klasifikasi_gangguan_jaringan.ipynb
+```
 
 ---
 
-# Masih Belajar 
- 
-Saat ini project masih dalam tahap **BETA** dan masih terus dikembangkan, jadi beberapa fitur / hasil model kemungkinan masih belum final.
+# Instalasi
 
-> ⚠️ Status: **On Progress (Beta)**  
-> 🔥 Project ini terbuka untuk diskusi dan pengembangan bareng.
+## Clone Repository
+
+```bash
+git clone https://github.com/USERNAME/REPOSITORY.git
+
+cd REPOSITORY
+```
+
+---
+
+## Membuat Virtual Environment
+
+Windows:
+
+```bash
+python -m venv venv
+```
+
+Aktivasi:
+
+```bash
+.\venv\Scripts\activate
+```
 
 ---
 
-## 🚀 Cara Jalanin Datanya
-1. Clone repository:
-   ```bash
-   git clone https://github.com/Raffa-shi/Prediksi-Machine-Learning.git
-   cd Prediksi-Machine-Learning
-Install Manual di Terminal
-- py pip install -r requirements.txt
-- py pip install numpy pandas scikit-learn matplotlib jupyter
-- jupyter notebook
+## Upgrade Pip
+
+```bash
+python -m pip install --upgrade pip
+```
 
 ---
-##  🌐 buat Enviroment baru
 
-- python -m venv venv
-- Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
-- .\venv\Scripts\activate
-- python -m pip install --upgrade pip
-- pip install -r requirements.txt
-- Python: Select Interpreter (ctrl + shift + p) select interpreter local venv 
+## Install Dependencies
 
-jalankan train models
+```bash
+pip install -r requirements.txt
+```
 
-- python train_models.py
+---
 
-Jalankan Flask
-- python app.py
+# Menjalankan Notebook
 
-> Note: karena project ini masih tahap **progress**, tech stack masih bisa bertambah (misalnya Seaborn untuk visualisasi lebih instant atau library khusus untuk network/graph).
+```bash
+jupyter notebook
+```
+
+atau
+
+```bash
+jupyter lab
+```
+
+---
+
+# Training Model
+
+```bash
+python train_models.py
+```
+
+Output:
+
+```text
+models/
+├── rf_model.pkl
+├── nb_model.pkl
+├── scaler.pkl
+└── label_encoder.pkl
+```
+
+---
+
+# Menjalankan Flask
+
+```bash
+python app.py
+```
+
+Akses browser:
+
+```text
+http://127.0.0.1:5001
+```
+
+---
+
+# Hasil Evaluasi Model
+
+Model dievaluasi menggunakan:
+
+- Accuracy
+- Precision
+- Recall
+- F1 Score
+- ROC Curve
+- Precision Recall Curve
+- Confusion Matrix
+- Learning Curve
+
+Hasil penelitian menunjukkan bahwa algoritma Random Forest memberikan performa terbaik dibandingkan Gaussian Naive Bayes dalam klasifikasi gangguan jaringan.
+
+---
+
+# Author
+
+Raffa Syahidul Haq Irsi
+
+Program Studi Teknik Informatika
+
+---
+
+# License
+
+Project ini dibuat untuk kebutuhan penelitian akademik dan pengembangan sistem prediksi gangguan jaringan.
