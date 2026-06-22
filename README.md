@@ -1,8 +1,10 @@
 <img width="1774" height="887" alt="newbanner" src="https://github.com/user-attachments/assets/ccd0890d-20f0-4f99-8beb-6fcc799a72bf" />
+
 ---
 <h1 align="center">
 Prediksi Gangguan Jaringan Menggunakan Algoritma Random Forest dan Naive Bayes
 </h1>
+
 ---
 <p align="center">
 <img src="https://img.shields.io/badge/Python-3.14-blue?logo=python&logoColor=white">
