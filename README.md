@@ -243,7 +243,7 @@ project/
 ## Clone Repository
 
 ```bash
-git clone https://github.com/USERNAME/REPOSITORY.git
+git clone https://github.com:Raffa-shi/Klasifikasi-Gangguan-Jaringan-Kantor-Kominfo-Berdasarkan-Parameter.git
 
 cd REPOSITORY
 ```
