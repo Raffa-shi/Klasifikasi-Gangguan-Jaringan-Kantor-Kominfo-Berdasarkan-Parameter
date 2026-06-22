@@ -156,7 +156,7 @@ Metrik evaluasi:
 
 ## 6. Deployment
 
-Model terbaik diimplementasikan ke dalam website menggunakan Flask Framework.
+Kedua Model diimplementasikan ke dalam website menggunakan Flask Framework.
 
 ---
 
@@ -323,14 +323,14 @@ python app.py
 Akses browser:
 
 ```text
-http://127.0.0.1:5001
+akan menampilkan localhost
 ```
 
 ---
 
 # Hasil Evaluasi Model
 
-Model dievaluasi menggunakan:
+Model evaluasi menggunakan:
 
 - Accuracy
 - Precision
