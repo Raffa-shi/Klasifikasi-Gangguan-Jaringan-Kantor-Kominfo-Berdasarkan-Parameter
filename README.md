@@ -1,15 +1,9 @@
-<p align="center">
-  <img src="img/banner.png" width="100%">
-</p>
-
+<img width="1774" height="887" alt="newbanner" src="https://github.com/user-attachments/assets/ccd0890d-20f0-4f99-8beb-6fcc799a72bf" />
+---
 <h1 align="center">
-Prediksi Gangguan Infrastruktur Jaringan Menggunakan Algoritma Random Forest dan Naive Bayes
+Prediksi Gangguan Jaringan Menggunakan Algoritma Random Forest dan Naive Bayes
 </h1>
-
-<p align="center">
-Implementasi Metode CRISP-DM untuk Klasifikasi Gangguan Jaringan Berbasis Website
-</p>
-
+---
 <p align="center">
 <img src="https://img.shields.io/badge/Python-3.14-blue?logo=python&logoColor=white">
 <img src="https://img.shields.io/badge/Flask-Web%20Application-black?logo=flask&logoColor=white">
@@ -112,21 +106,33 @@ Model yang digunakan:
 
 ### Random Forest
 
-$$
-\hat{y}
-=
-mode(h_1(x),h_2(x),...,h_n(x))
-$$
+Rumus prediksi Random Forest:
+
+```text
+ŷ = mode(h1(x), h2(x), h3(x), ..., hn(x))
+```
+
+Keterangan:
+
+- ŷ = hasil prediksi akhir
+- h(x) = prediksi masing-masing decision tree
+- mode() = voting mayoritas dari seluruh pohon keputusan
 
 ### Gaussian Naive Bayes
 
-$$
-P(C|X)
-=
-\frac
-{P(X|C)P(C)}
-{P(X)}
-$$
+Teorema Bayes:
+
+```text
+P(C|X) = ( P(X|C) × P(C) ) / P(X)
+```
+
+Keterangan:
+
+- P(C|X) = probabilitas posterior
+- P(X|C) = likelihood
+- P(C) = prior probability
+- P(X) = evidence
+```
 
 Hyperparameter tuning dilakukan menggunakan:
 
